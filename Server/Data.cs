@@ -278,7 +278,6 @@ namespace Server
         private unsafe bool FetchUpgradeStats(int playerNumber)
         {
             List<string> buttonArt = new List<string>();
-            List<string> progress = new List<string>();
 
             foreach (var upgrade in file.Players[playerNumber - 1].Upgrades)
             {
@@ -351,8 +350,38 @@ namespace Server
 
         private static string FormatButtonArtFile(string file)
         {
-            string[] s = file.Split("\\");
-            return s[s.Length - 1].Split(".")[0] + ".png";
+            string[] s;
+
+            if (file.Contains('/'))
+            {
+                s = file.Split("/");
+            }
+            else
+            {
+                s = file.Split("\\");
+            }
+
+            string buttonArt = s[s.Length - 1].Split(".")[0] + ".png";
+
+            // bandaid solution to not having access to w3champions custom item icons
+            switch (buttonArt)
+            {
+                case "BTNClaw+5.png":
+                case "BTNClaw+8.png":
+                case "BTNClaw+12.png":
+                case "BTNClaw+15.png":
+                    buttonArt = "BTNClawsOfAttack.png";
+                    break;
+                case "BTNRoP+3.png":
+                case "BTNRoP+4.png":
+                case "BTNRoP+5.png":
+                    buttonArt = "BTNRingGreen.png";
+                    break;
+                default:
+                    break;
+            }
+
+            return buttonArt;
         }
 
         public static string ConvertDictionaryToString(Dictionary<string, string> dictionary)
