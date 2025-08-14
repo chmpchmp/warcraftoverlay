@@ -234,33 +234,34 @@ namespace Server
                     {
                         upgradeProg.Add(u.ToString());
 
-                        switch (FormatButtonArtFile(structure.ButtonArt))
+                        switch (structure.Id)
                         {
-                            case "BTNTownHall.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNKeep.png"));
+                            case 1752461175:    // town hall
+                                upgradeBA.Add("BTNKeep.png");
                                 break;
-                            case "BTNKeep.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNCastle.png"));
+                            case 1751868773:    // keep
+                                upgradeBA.Add("BTNCastle.png");
                                 break;
-                            case "BTNGreathall.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNStronghold.png"));
+                            case 1869050469:    // great hall
+                                upgradeBA.Add("BTNStronghold.png");
                                 break;
-                            case "BTNStronghold.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNFortress.png"));
+                            case 1869837426:    // stronghold
+                                upgradeBA.Add("BTNFortress.png");
                                 break;
-                            case "BTNNecropolis.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNHallOfTheDead.png"));
+                            case 1970172012:    // necropolis
+                                upgradeBA.Add("BTNHallOfTheDead.png");
                                 break;
-                            case "BTNHallOfTheDead.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNBlackCitadel.png"));
+                            case 1970171953:    // halls of the dead
+                                upgradeBA.Add("BTNBlackCitadel.png");
                                 break;
-                            case "BTNTreeOfLife.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNTreeOfAges.png"));
+                            case 1702129516:    // tree of life
+                                upgradeBA.Add("BTNTreeOfAges.png");
                                 break;
-                            case "BTNTreeOfAges.png":
-                                upgradeBA.Add(FormatButtonArtFile("BTNTreeOfEternity.png"));
+                            case 1702129505:    // tree of ages
+                                upgradeBA.Add("BTNTreeOfEternity.png");
                                 break;
                             default:
+                                upgradeBA.Add(FormatButtonArtFile(structure.ButtonArt));
                                 break;
                         }
                     }
