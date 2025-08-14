@@ -37,45 +37,45 @@ function Client() {
 
     // if game is not in replay with exactly 2 players, display this instead
     if ((gameData.status.in_replay === 'true') === true && parseInt(gameData.stats.players) === 2) {
-        const color = [gameData.p1.color, gameData.p2.color];
-        const time = gameData.stats.time;
-        const name = [gameData.p1.name, gameData.p2.name];
-        const gold = [gameData.p1.gold, gameData.p2.gold];
-        const lumber = [gameData.p1.lumber, gameData.p2.lumber];
-        const food = [gameData.p1.food, gameData.p2.food];
-        const max_food = [gameData.p1.max_food, gameData.p2.max_food];
+        var time = gameData.stats.time;
+        var color = [gameData.p1.color, gameData.p2.color];
+        var name = [gameData.p1.name, gameData.p2.name];
+        var gold = [gameData.p1.gold, gameData.p2.gold];
+        var lumber = [gameData.p1.lumber, gameData.p2.lumber];
+        var food = [gameData.p1.food, gameData.p2.food];
+        var max_food = [gameData.p1.max_food, gameData.p2.max_food];
             
-        const p1_hero = {
+        var p1_hero = {
             hero1: JSON.parse(gameData.p1.hero1),
             hero2: JSON.parse(gameData.p1.hero2),
             hero3: JSON.parse(gameData.p1.hero3)
         }
 
-        const p2_hero = {
+        var p2_hero = {
             hero1: JSON.parse(gameData.p2.hero1),
             hero2: JSON.parse(gameData.p2.hero2),
             hero3: JSON.parse(gameData.p2.hero3)
         }
 
-        const p1_units = {
+        var p1_units = {
             portrait: JSON.parse(gameData.p1.unit_portrait),
             count: JSON.parse(gameData.p1.unit_count)
         }
 
-        const p2_units = {
+        var p2_units = {
             portrait: JSON.parse(gameData.p2.unit_portrait),
             count: JSON.parse(gameData.p2.unit_count)
         }
 
-        const p1_upgrades = {
+        var p1_upgrades = {
             portrait: JSON.parse(gameData.p1.upgrade_portrait)
         }
 
-        const p2_upgrades = {
+        var p2_upgrades = {
             portrait: JSON.parse(gameData.p2.upgrade_portrait)
         }
 
-        const p1_production = {
+        var p1_production = {
             units: {
                 portrait: JSON.parse(gameData.p1.production_unit_portrait),
                 progress: JSON.parse(gameData.p1.production_unit_progress)
@@ -90,7 +90,7 @@ function Client() {
             }
         }
         
-        const p2_production = {
+        var p2_production = {
             units: {
                 portrait: JSON.parse(gameData.p2.production_unit_portrait),
                 progress: JSON.parse(gameData.p2.production_unit_progress)
@@ -103,6 +103,33 @@ function Client() {
                 portrait: JSON.parse(gameData.p2.production_structure_portrait),
                 progress: JSON.parse(gameData.p2.production_structure_progress)
             }
+        }
+
+        var temp = null;
+
+        if (window.location.pathname === '/flipped') {
+            color.reverse();
+            name.reverse();
+            gold.reverse();
+            lumber.reverse();
+            food.reverse();
+            max_food.reverse();
+
+            temp = p1_hero;
+            p1_hero = p2_hero;
+            p2_hero = temp;
+
+            temp = p1_units;
+            p1_units = p2_units;
+            p2_units = temp;
+
+            temp = p1_upgrades;
+            p1_upgrades = p2_upgrades;
+            p2_upgrades = temp;
+
+            temp = p1_production;
+            p1_production = p2_production;
+            p2_production = temp;
         }
 
         return (
