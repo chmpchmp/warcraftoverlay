@@ -228,12 +228,41 @@ namespace Server
                 }
                 else
                 {
-                    uint u = structure.UpgradeProgress; 
+                    uint u = structure.UpgradeProgress;
 
                     if (u != 0)
                     {
-                        upgradeBA.Add(FormatButtonArtFile(structure.ButtonArt));
                         upgradeProg.Add(u.ToString());
+
+                        switch (FormatButtonArtFile(structure.ButtonArt))
+                        {
+                            case "BTNTownHall.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNKeep.png"));
+                                break;
+                            case "BTNKeep.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNCastle.png"));
+                                break;
+                            case "BTNGreathall.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNStronghold.png"));
+                                break;
+                            case "BTNStronghold.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNFortress.png"));
+                                break;
+                            case "BTNNecropolis.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNHallOfTheDead.png"));
+                                break;
+                            case "BTNHallOfTheDead.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNBlackCitadel.png"));
+                                break;
+                            case "BTNTreeOfLife.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNTreeOfAges.png"));
+                                break;
+                            case "BTNTreeOfAges.png":
+                                upgradeBA.Add(FormatButtonArtFile("BTNTreeOfEternity.png"));
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 }
             }
