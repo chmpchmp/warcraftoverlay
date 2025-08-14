@@ -4,8 +4,13 @@ warcraftoverlay is an overlay for Open Broadcast Software (OBS) that displays ex
 <img width="1920" height="1080" alt="demo" src="https://github.com/user-attachments/assets/409d284b-8e9e-45c9-a4b1-22675afc9250" />
 
 ## OBS Setup
-- Add **Browser Source**
+- Add a **Scene**
+- Add a **Browser Source**
 - Set **URL** to http://localhost:25567
 - Set **width** to 1920
 - Set **height** to 1080
-- Enable **Refresh browser when scene becomes active**
+- Enable **Shutdown source when not visible**
+- Add another **Scene**
+- Add another **Browser Source**
+- Set **URL** to http://localhost:25567/flipped
+- Use the same settings as before
