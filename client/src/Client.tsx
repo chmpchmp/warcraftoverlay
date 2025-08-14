@@ -7,61 +7,8 @@ import Production from './Production.tsx'
 import Background from './Background.tsx'
 import type { GameData } from './types.ts'
 
-const data: GameData = {
-    p1: {
-        name: '',
-        color: '',
-        gold: '',
-        lumber: '',
-        food: '',
-        max_food: '',
-        hero1: "{}",
-        hero2: "{}",
-        hero3: "{}",
-        unit_portrait: '[]',
-        unit_count: '[]',
-        upgrade_portrait: '[]',
-        upgrade_progress: '[]',
-        production_unit_portrait: '[]',
-        production_unit_progress: '[]',
-        production_upgrade_portrait: '[]',
-        production_upgrade_progress: '[]',
-        production_structure_portrait: '[]',
-        production_structure_progress: '[]'
-    },
-    p2: {
-        name: '',
-        color: '',
-        gold: '',
-        lumber: '',
-        food: '',
-        max_food: '',
-        hero1: '{}',
-        hero2: '{}',
-        hero3: '{}',
-        unit_portrait: '[]',
-        unit_count: '[]',
-        upgrade_portrait: '[]',
-        upgrade_progress: '[]',
-        production_unit_portrait: '[]',
-        production_unit_progress: '[]',
-        production_upgrade_portrait: '[]',
-        production_upgrade_progress: '[]',
-        production_structure_portrait: '[]',
-        production_structure_progress: '[]'
-    },
-    stats: {
-        players: '',
-        time: ''
-    },
-    status: {
-        application_opened: 'false',
-        in_replay: 'false'
-    }
-}
-
 function Client() {
-    const [gameData, setGameData] = useState(data)
+    const [gameData, setGameData] = useState<GameData | null>(null);
 
     useEffect(() => {
         // connect to server
@@ -79,6 +26,14 @@ function Client() {
             }
         }
     }, []);
+
+    if (!gameData) {
+        return (
+            <>
+                Client is not connected to server
+            </>
+        )
+    }
 
     // if game is not in replay with exactly 2 players, display this instead
     if ((gameData.status.in_replay === 'true') === true && parseInt(gameData.stats.players) === 2) {
@@ -164,6 +119,7 @@ function Client() {
 
     return (
         <>
+            Waiting for game or replay to start
         </>
     )
 }
