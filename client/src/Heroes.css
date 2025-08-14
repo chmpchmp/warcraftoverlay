@@ -1,0 +1,162 @@
+.heroes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spacing {
+    background: rgba(0, 0, 0, 0.0);
+    padding: 32px 16px 0px 16px;
+    display: flex;
+}
+
+.background {
+    height: 108px;
+    width: 170px;
+    background: rgba(60, 60, 60, 0.8);
+    padding: 4px;
+    align-content: center;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+}
+
+.portrait {
+    position: relative;
+}
+
+.portrait img {
+    height: 64px;
+    width: 64px;
+    background: rgba(27, 27, 27, 1.0);
+    padding: 1px;
+}
+
+.level {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 18px;
+    width: 18px;
+    border-radius: 2px;
+}
+
+.abilities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.abilities-padding {
+    position: relative;
+    padding: 0px 4px 0px 0px;
+}
+
+.abilities img {
+    display: block;
+    background: rgba(27, 27, 27, 1.0);
+    width: 30px;
+    height: 30px;
+    padding: 1px 13px 1px 1px;
+}
+
+.ability-placeholder {
+    background: rgba(27, 27, 27, 1.0);
+    width: 30px;
+    height: 30px;
+    padding: 1px 13px 1px 1px;
+}
+
+.ability-level {
+    position: absolute;
+    background: rgba(255, 215, 0, 1.0);
+    width: 8px;
+    height: 8px;
+}
+
+.ability-level1 {
+    top: 2px;
+    right: 6px;
+}
+
+.ability-level2 {
+    top: 12px;
+    right: 6px;
+}
+
+.ability-level3 {
+    top: 22px;
+    right: 6px;
+}
+
+.bars {
+    padding: 2px;
+}
+
+.bar {
+    height: 6px;
+    width: 162px;
+    background: rgba(27, 27, 27, 1.0);
+    padding: 2px;
+}
+
+.progress-bar {
+    height: 6px;
+    transition: width 0.5s ease;
+}
+
+.experience {
+    background: linear-gradient(to right, #833aaa, #cb6aff);
+}
+
+.health {
+    background: linear-gradient(to right, #368939, #62ff62);
+}
+
+.mana {
+    background: linear-gradient(to right, #2e61a7, #5fa2ff);
+}
+
+.items-background {
+    background: rgba(60, 60, 60, 0.8);
+    padding: 6px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+.item {
+    position: relative;
+}
+
+.item img {
+    display: block;
+    background: rgba(27, 27, 27, 1.0);
+    width: 36px;
+    height: 36px;
+    padding: 1px;
+}
+
+.charges {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    font-size: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 12px;
+    width: 12px;
+    border-radius: 1px;
+}
+
+.item-placeholder {
+    background: rgba(27, 27, 27, 1.0);
+    width: 36px;
+    height: 36px;
+    padding: 1px;
+}

@@ -1,0 +1,28 @@
+.upgrades {
+    position: absolute;
+    bottom: 24px;
+    left: 1360px;
+}
+
+.upgrade-row {
+    display: flex;
+    padding: 80px 0px 0px 0px;
+}
+
+.upgrades-team {
+    background: rgba(27, 27, 27, 1.0);
+    height: 38px;
+    width: 8px;
+}
+
+.upgrade {
+    position: relative;
+}
+
+.upgrade img {
+    display: block;
+    background: rgba(27, 27, 27, 1.0);
+    width: 36px;
+    height: 36px;
+    padding: 1px;
+}

@@ -1,0 +1,51 @@
+.scoreboard {
+    color: white;
+    display: inline-flex;
+    font-size: 32px;
+}
+
+.scoreboard-padding {
+    padding: 24px 0px;
+}
+
+.name {
+    font-weight: 500;
+    width: 396px;
+}
+
+.gold {
+    background: #200e1f;
+    width: 140px;
+}
+
+.gold img {
+    width: 24px;
+    height: 24px;
+}
+
+.lumber {
+    background: #200e1f;
+    width: 140px;
+}
+
+.lumber img {
+    width: 24px;
+    height: 24px;
+}
+
+.food {
+    background: #200e1f;
+    width: 180px;
+}
+
+.food img {
+    width: 24px;
+    height: 24px;    
+}
+
+.time {
+    background: #200e1f;
+    font-weight: 500;
+    width: 210px;
+    letter-spacing: 2px;
+}
