@@ -109,15 +109,15 @@
 }
 
 .experience {
-    background: linear-gradient(to right, #833aaa, #cb6aff);
+    background: linear-gradient(to right, #5a1280, #cb6aff);
 }
 
 .health {
-    background: linear-gradient(to right, #368939, #62ff62);
+    background: linear-gradient(to right, #008604, #62ff62);
 }
 
 .mana {
-    background: linear-gradient(to right, #2e61a7, #5fa2ff);
+    background: linear-gradient(to right, #0e51ad, #5fa2ff);
 }
 
 .items-background {
