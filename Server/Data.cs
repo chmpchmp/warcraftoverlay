@@ -37,7 +37,6 @@ namespace Server
                 if (!ObserverData.TryOpen(out file))
                 {
                     dict["status"]["application_opened"] = "false";
-                    dict["status"]["in_replay"] = "false";
                     return dict;
                 }
 
@@ -54,42 +53,32 @@ namespace Server
                     // reset dictionary once game closes
                     InitializeDictionary();
                     dict["status"]["application_opened"] = "false";
-                    dict["status"]["in_replay"] = "false";
                     return dict;
                 }
             }
 
-            // return null if the server failed to fetch data
-            if (file.Shops.Length == 0)
+            dict["status"]["application_opened"] = "true";
+            bool success = FetchGameData();
+
+            if (!success)
             {
                 return null;
             }
-
-            dict["status"]["application_opened"] = "true";
-            FetchGameData();
 
             return dict;
         }
 
         private unsafe bool FetchGameData()
         {
-            if (file.Shops.Length == 0)
+            if (file.Shops.Length == 0 || file.Players[file.Players.Length - 1].Structures.Length == 0)
             {
-                dict["status"]["in_replay"] = "false";
-            }
-            else
-            {
-                dict["status"]["in_replay"] = "true";
+                return false;
             }
 
-            dict["stats"]["players"] = file.Game->NumberOfPlayers.ToString();
-
-            // fetch data only if player count is 2
-            if (file.Game->NumberOfPlayers == 2)
+            if (file.Game->IsInGame && file.Game->NumberOfPlayers == 2)
             {
                 dict["stats"]["map_name"] = FormatMapName(file.Game->MapName);
                 dict["stats"]["time"] = FormatTime(file.Game->GameTime.ToString());
-
 
                 for (int i = 1; i <= file.Game->NumberOfPlayers; i++)
                 {
