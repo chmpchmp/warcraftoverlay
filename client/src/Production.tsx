@@ -1,5 +1,5 @@
 import './Production.css'
-import type { ProductionProps, ProductionData, ProductionUnitProps } from './types.ts'
+import type { ProductionProps, ProductionUnitProps } from './types.ts'
 
 const directory = '/assets/icons/';
 
