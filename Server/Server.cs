@@ -37,7 +37,7 @@ namespace Server
                 if (request.IsWebSocketRequest)
                 {
                     HttpListenerWebSocketContext wsContext = await context.AcceptWebSocketAsync(null);
-                    //Console.WriteLine("Websocket client connection established");
+                    Console.WriteLine("Websocket client connection established");
                     await HandleWebSocketConnection(wsContext.WebSocket);
                 }
                 else
