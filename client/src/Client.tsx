@@ -30,7 +30,7 @@ function Client() {
     if (!gameData) {
         return (
             <>
-                Client is not connected to server
+                No game data to currently fetch
             </>
         )
     }
