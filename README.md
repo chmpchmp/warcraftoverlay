@@ -15,7 +15,9 @@ warcraftoverlay is an overlay for Open Broadcast Software (OBS) that displays ex
 - Add another `Browser Source`
 - Set `URL` to http://localhost:25567/flipped
 - Use the same settings as before
+### Packages
+- In `client`, run `npm install` to download packages
 ### Icons
-- In the `client/public/assets` directory, extract the `icons.zip` folder
+- In `client/public/assets`, extract `icons.zip`
 ### Usage
-- Open `run.bat` file in the `tools` directory
+- Open `run.bat` in `tools`
