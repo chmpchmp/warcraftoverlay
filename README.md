@@ -19,5 +19,5 @@ warcraftoverlay is an overlay for Open Broadcast Software (OBS) that displays ex
 - In `client`, run `npm install` to download packages
 ### Icons
 - In `client/public/assets`, extract `icons.zip`
-### Usage
+## Usage
 - Open `run.bat` in `tools`
